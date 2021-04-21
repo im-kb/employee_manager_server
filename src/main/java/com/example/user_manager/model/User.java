@@ -1,31 +1,35 @@
-package com.example.employee_manager.model;
+package com.example.user_manager.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Employee implements Serializable {
+public class User implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "auto_gen")
+    @SequenceGenerator(name = "auto_gen", sequenceName = "A")
     @Column(nullable = false, updatable = false)
     private Long id;
+
     private String name;
     private String email;
     private String jobTitle;
     private String phone;
     private String imageUrl;
+
     @Column(nullable = false, updatable = false)
-    private String employeeCode;
+    private String userCode;
 
-    public Employee() {}
+    public User() {}
 
-    public Employee(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
+    public User(String name, String email, String jobTitle, String phone, String imageUrl, String userCode) {
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
         this.phone = phone;
         this.imageUrl = imageUrl;
-        this.employeeCode = employeeCode;
+        this.userCode = userCode;
     }
 
     public Long getId() {
@@ -76,17 +80,17 @@ public class Employee implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public String getEmployeeCode() {
-        return employeeCode;
+    public String getUserCode() {
+        return userCode;
     }
 
-    public void setEmployeeCode(String employeeCode) {
-        this.employeeCode = employeeCode;
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
