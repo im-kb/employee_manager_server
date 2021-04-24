@@ -5,6 +5,7 @@ import com.example.user_manager.model.User;
 import com.example.user_manager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,13 +14,13 @@ import java.util.UUID;
 public class UserService {
     private final UserRepository userRepo;
 
+
     @Autowired
     public UserService(UserRepository userRepo) {
         this.userRepo = userRepo;
     }
 
     public User addUser(User user){
-        user.setUserCode(UUID.randomUUID().toString());
         return userRepo.save(user);
     }
 

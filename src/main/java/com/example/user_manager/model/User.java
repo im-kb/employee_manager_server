@@ -18,8 +18,6 @@ public class User implements Serializable {
     private String phone;
     private String imageUrl;
 
-    @Column(nullable = false, updatable = false)
-    private String userCode;
 
     public User() {}
 
@@ -29,7 +27,6 @@ public class User implements Serializable {
         this.jobTitle = jobTitle;
         this.phone = phone;
         this.imageUrl = imageUrl;
-        this.userCode = userCode;
     }
 
     public Long getId() {
@@ -80,13 +77,6 @@ public class User implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public String getUserCode() {
-        return userCode;
-    }
-
-    public void setUserCode(String userCode) {
-        this.userCode = userCode;
-    }
 
     @Override
     public String toString() {
