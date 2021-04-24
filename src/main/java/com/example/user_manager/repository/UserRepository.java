@@ -2,7 +2,6 @@ package com.example.user_manager.repository;
 
 import com.example.user_manager.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.user_manager.model.User;
 
 import java.util.Optional;
 
